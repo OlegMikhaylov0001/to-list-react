@@ -12,15 +12,17 @@ import { TaskArray } from '../mock/TaskMock';
 interface ItemTasksProps {
     task: TaskArray;
     onClick?: () => void;
+    onChangeStatusTask: () => void;
 }
 
-function ItemToDoList({task, onClick}: ItemTasksProps) {
+function ItemToDoList({task, onClick, onChangeStatusTask}: ItemTasksProps) {
     const {isDone, title} = task;
+
   return (
     <>
       <ListItemButton role={undefined} dense>
         <ListItemIcon>
-          <Checkbox checked={isDone} edge="start" disableRipple />
+          <Checkbox onChange={() => console.log('onChange')} checked={isDone} edge="start" disableRipple />
         </ListItemIcon>
         <ListItemText primary={title} />
       </ListItemButton>
