@@ -10,12 +10,12 @@ interface PropsType  {
 }
 
 function ListTask(props: PropsType) {
-  const onChangeStatusTask = (e: any) => console.log(e.target.id)
+
   return (
     <List sx={{ width: '100%', maxWidth: 480 }}>
           {props.tasksForToDoList.map((item) => (
             <ListItem key={item.id}>
-              <ItemToDoList changeTaskStatus={onChangeStatusTask} onClick={() => props.removeTask(item.id)} task={item} />
+              <ItemToDoList onChangeStatusTask= {props.changeTaskStatus} id={item.id} onClick={() => props.removeTask(item.id)} task={item} />
             </ListItem>
           ))}
         </List>

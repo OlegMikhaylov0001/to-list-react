@@ -62,7 +62,7 @@ function ToDoList({ title }: MainToDoListProps) {
     let NewArrayTask = tasks 
     let task = NewArrayTask.find(t => t.id === taskId)
     if (task) {
-    task.isDone = idDone;
+    task.isDone = !idDone;
     }
     setTasks([...NewArrayTask]);
   }
